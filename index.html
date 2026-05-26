@@ -542,6 +542,187 @@
       font-size: 18px;
     }
 
+
+    /* VISUAL EVENT CARDS */
+
+    details.event-card {
+      border: 1px solid rgba(201,154,74,.74);
+      background:
+        linear-gradient(180deg, rgba(255,245,225,.035), rgba(0,0,0,.18)),
+        rgba(0,0,0,.32);
+      min-height: 560px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding-bottom: 12px;
+      transition: .25s ease;
+      box-shadow: 0 18px 44px rgba(0,0,0,.24);
+    }
+
+    details.event-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 24px 64px rgba(0,0,0,.52);
+      border-color: var(--bright-gold);
+    }
+
+    details summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      padding: 0;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .event-image {
+      position: relative;
+      height: 205px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(201,154,74,.42);
+      background:
+        radial-gradient(circle at 40% 28%, rgba(232,189,112,.20), transparent 32%),
+        linear-gradient(135deg, #20150d, #050403 78%);
+    }
+
+    .event-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: brightness(.78) contrast(1.08) saturate(.96);
+      transition: transform .35s ease, filter .35s ease;
+    }
+
+    details.event-card:hover .event-image img {
+      transform: scale(1.035);
+      filter: brightness(.9) contrast(1.08) saturate(1.02);
+    }
+
+    .event-image-placeholder {
+      height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      color: rgba(245,234,210,.68);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: .2em;
+      line-height: 1.7;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .event-badge {
+      position: absolute;
+      left: 18px;
+      top: 16px;
+      z-index: 2;
+      border: 1px solid rgba(232,189,112,.72);
+      background: rgba(5,4,3,.72);
+      color: var(--bright-gold);
+      padding: 7px 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .event-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 24px 26px 26px;
+    }
+
+    .event-kicker {
+      color: var(--bright-gold);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 10px;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .event-card h2 {
+      color: #fff5e1;
+      font-size: 25px;
+      line-height: 1.06;
+      font-weight: 400;
+      letter-spacing: -.02em;
+      margin: 0 0 8px;
+    }
+
+    .event-card h3 {
+      color: var(--gold);
+      font-size: 17px;
+      line-height: 1.22;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .event-card p {
+      color: #eee1ca;
+      font-size: 15px;
+      line-height: 1.52;
+      margin-bottom: 16px;
+    }
+
+    .event-line {
+      width: 36px;
+      border-top: 1px solid var(--gold);
+      margin: 16px 0;
+    }
+
+    .event-meta-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 18px;
+      align-items: end;
+      margin: auto 0 20px;
+    }
+
+    .event-meta {
+      color: #dfd0b4;
+      font-size: 14px;
+      line-height: 1.5;
+      margin-bottom: 0;
+    }
+
+    .price {
+      color: var(--bright-gold);
+      font-size: 31px;
+      line-height: 1;
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+
+    .event-card .button {
+      width: 100%;
+      margin-top: 0;
+    }
+
+    .event-expanded {
+      padding: 0 26px 26px;
+    }
+
+    .event-expanded p {
+      font-size: 15px;
+      line-height: 1.55;
+      color: var(--muted);
+    }
+
+    .event-expanded .button {
+      width: 100%;
+      min-height: 42px;
+      padding: 10px;
+      font-size: 10px;
+    }
+
     /* APPLY */
 
     .apply-section {
@@ -871,7 +1052,8 @@
       <div class="shell premise-inner">
         <div class="premise-title">The Premise</div>
         <div class="premise-copy">
- <p>Sidecar Society creates intimate social experiences for people who miss meaningful conversation. Through shared dinners, listening rooms, themed gatherings, and beautifully designed spaces, we bring strangers together in ways that feel natural, memorable, and deeply human.</p>
+          <p>Sidecar Society creates intimate social experiences for people who miss meaningful conversation. Through shared dinners, listening rooms, themed gatherings, and beautifully designed spaces, we bring strangers together in ways that feel natural, memorable, and deeply human.</p>
+        </div>
       </div>
     </section>
 
@@ -921,16 +1103,66 @@
         <div class="section-subtitle">Choose your room. Use promo code WELCOME for a discount on your first experience. Use EARLY for early bird admission price.</div>
 
         <div class="event-grid">
+
+    
+
           <details class="event-card">
             <summary>
-              <div class="event-number">1.</div>
-              <h2>Sidecar Sessions: Tokyo After Dark</h2>
-              <h3>The First Pour</h3>
-              <p>An evening of vinyl, Japanese cocktails, shared plates, and conversation. </p>
-              <div class="event-line"></div>
-              <div class="event-meta">Thu, Jun 11<br />7 PM<br />East Village</div>
-              <div class="price">$24</div>
-              <span class="button">View Details</span>
+              <div class="event-image">
+                <span class="event-badge">Atelier</span>
+                <img src="images/event-mediterranean-summer.jpg" alt="A candlelit Mediterranean table with wine, olive branches, citrus, and florals" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <div class="event-image-placeholder" style="display:none;">Add image:<br />images/event-mediterranean-summer.jpg<br /><br />Wine · olive branches · citrus · flowers</div>
+              </div>
+              <div class="event-content">
+                <div class="event-kicker">2 · Wine + Flower Atelier</div>
+                <h2>Sidecar Atelier Vol. I: Mediterranean Summer</h2>
+                <h3>An evening of wine, flowers, and the beautiful lives we hope to build.</h3>
+                <p>Join us for a candlelit evening inspired by Mediterranean summers. Guests will create their own Mediterranean-inspired arrangement using olive branches, herbs, seasonal florals, citrus, ribbon, and natural textures while gathering around a communal table designed to feel transportive.</p>
+                <div class="event-line"></div>
+                <div class="event-meta-row"><div class="event-meta">Thu, Jun 18<br />7:30 PM<br />FiDi, Manhattan</div><div class="price">$40</div></div>
+                <span class="button">View Details</span>
+              </div>
+            </summary>
+            <div class="event-expanded">
+              <p>This is not a traditional florist workshop and no experience is required. The goal is not perfection - it is atmosphere.</p>
+              <br>
+              <p>A thoughtfully curated room full of people interested in more than surface-level interaction.</p>
+              <p>Imagine you are preparing the table for a summer evening somewhere abroad.</p>
+              <ul>
+                <li>Who is there?</li>
+                <li>What are you celebrating?</li>
+                <li> What kind of life are you building?</li>
+              </ul>
+              <p>Expect:</p>
+              <ul>
+                <li>🌿 Olive branches, herbs, florals, and citrus</li>
+                <li>🍷 Wine-forward atmosphere</li>
+                <li>🕯 Candlelit communal seating</li>
+                <li>🍋 Your arrangement to take home</li>
+                <li>✨ A small, thoughtfully curated group</li>
+              </ul>
+              <br>
+              <p>For people who still believe beautiful evenings matter.</p>
+              <a class="button gold" href="https://buy.stripe.com/8x28wP3DJ6YJdv89ft6sw07">Purchase Ticket</a>
+            </div>
+          </details>
+
+           <details class="event-card">
+            <summary>
+              <div class="event-image">
+                <span class="event-badge">Session</span>
+                <img src="images/event-tokyo-after-dark.jpg" alt="A moody Japanese listening bar with cocktails, vinyl, and warm low light" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <div class="event-image-placeholder" style="display:none;">Add image:<br />images/event-tokyo-after-dark.jpg<br /><br />Vinyl · Japanese cocktails · low light</div>
+              </div>
+              <div class="event-content">
+                <div class="event-kicker">1 · Cocktails + Listening Room</div>
+                <h2>Sidecar Sessions: Tokyo After Dark</h2>
+                <h3>The First Pour</h3>
+                <p>An evening of vinyl, Japanese cocktails, shared plates, and conversation.</p>
+                <div class="event-line"></div>
+                <div class="event-meta-row"><div class="event-meta">Thu, Jun 11<br />7 PM<br />East Village</div><div class="price">$24</div></div>
+                <span class="button">View Details</span>
+              </div>
             </summary>
             <div class="event-expanded">
               <p>Begin the evening at an East Village speakeasy listening room inspired by Tokyo jazz bars and late-night conversation. Guests will gather over Japanese cocktails and vinyl before migrating together through the city to a shared izakaya dinner.</p>
@@ -952,46 +1184,20 @@
 
           <details class="event-card">
             <summary>
-              <div class="event-number">2.</div>
-              <h2>Elsewhere: Mediterranean Summer</h2>
-              <h3>A long dinner about beautiful lives</h3>
-              <p>A long-table dinner inspired by warm nights, shared plates, and conversations that linger.</p>
-              <div class="event-line"></div>
-              <div class="event-meta">Thu, Jun 18<br />7:30 PM<br />Lower Manhattan</div>
-              <div class="price">$24</div>
-              <span class="button">View Details</span>
-            </summary>
-            <div class="event-expanded">
-              <p>Guests gather over wine, mezze, candlelight, and Mediterranean-inspired dishes for an evening centered around beauty, friendship, meaning, and the lives we hope to build.</p>
-              <br>
-              <p>A thoughtfully curated room full of people interested in more than surface-level interaction.</p>
-              <p>Expect:</p>
-              <ul>
-                <li>Shared Mediterranean-style dining</li>
-                <li>wine-forward atmosphere</li>
-                <li>intimate communal seating</li>
-                <li>thoughtful and emotionally open conversation</li>
-              </ul>
-              <br>
-              <p>Come hungry- for both food and conversation.</p>
-              <a class="button gold" href="https://buy.stripe.com/aFa14n6PV1EpfDg3V96sw03">Purchase Ticket</a>
-            </div>
-          </details>
-
-          <details class="event-card">
-            <summary>
-              <div class="event-number">3.</div>
-              <h2>The Curiosity Market</h2>
-              <h3>A social gathering for people with fascinations, niche interests, and things they cannot stop thinking about.</h3>
-              <p>Every attendee brings one object, artifact, photo, book, map, research topic, collection, or curiosity to share with the room. Guests will have a few minutes to explain:</p>
-              <br>
-              <p>"This matters because..."</p>
-              <br>
-              <p>The evening is designed to bridge special interests and genuine connection- less small talk, more enthusiasm.</p>
-              <div class="event-line"></div>
-              <div class="event-meta">Thu, Jul 09<br />7:30 PM<br />Lower Manhattan</div>
-              <div class="price">$24</div>
-              <span class="button">View Details</span>
+              <div class="event-image">
+                <span class="event-badge">Salon</span>
+                <img src="images/event-curiosity-market.jpg" alt="A table filled with books, maps, artifacts, cameras, and curious objects" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <div class="event-image-placeholder" style="display:none;">Add image:<br />images/event-curiosity-market.jpg<br /><br />Books · maps · artifacts · fascinations</div>
+              </div>
+              <div class="event-content">
+                <div class="event-kicker">3 · Objects + Obsessions</div>
+                <h2>The Curiosity Market</h2>
+                <h3>A gathering for people with fascinations.</h3>
+                <p>Bring one object, artifact, book, photo, map, research topic, or curiosity and tell the room: “This matters because...”</p>
+                <div class="event-line"></div>
+                <div class="event-meta-row"><div class="event-meta">Thu, Jul 09<br />7:30 PM<br />Lower Manhattan</div><div class="price">$32</div></div>
+                <span class="button">View Details</span>
+              </div>
             </summary>
             <div class="event-expanded">
               <p>Bring:</p>
@@ -1006,20 +1212,26 @@
                 
               </ul>
               <p>The Curiosity Market is built for intellectually curious people, passionate hobbyists, artists, STEM minds, and anyone who lights up when talking about what fascinates them.</p>
-              <a class="button gold" href="https://buy.stripe.com/fZuaEXcafdn74YC3V96sw02">Purchase Ticket</a>
+              <a class="button gold" href="https://buy.stripe.com/cNi00jfmr1Ep0Im8bp6sw09">Purchase Ticket</a>
             </div>
           </details>
 
           <details class="event-card">
             <summary>
-              <div class="event-number">4.</div>
-              <h2>Sidecar Cinema Club</h2>
-              <h3>Roman Holiday</h3>
-              <p>An evening of film, cocktails, and conversation inspired by classic cinema.</p>
-              <div class="event-line"></div>
-              <div class="event-meta">Thu, Jul 16<br />7:30 PM<br />Lower Manhattan</div>
-              <div class="price">$24</div>
-              <span class="button">View Details</span>
+              <div class="event-image">
+                <span class="event-badge">Cinema</span>
+                <img src="images/event-roman-holiday.jpg" alt="A romantic classic cinema night with cocktails, candlelight, and vintage European atmosphere" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <div class="event-image-placeholder" style="display:none;">Add image:<br />images/event-roman-holiday.jpg<br /><br />Classic film · cocktails · candlelight</div>
+              </div>
+              <div class="event-content">
+                <div class="event-kicker">4 · Film + Conversation</div>
+                <h2>Sidecar Cinema Club</h2>
+                <h3>Roman Holiday</h3>
+                <p>An evening of film, cocktails, and conversation inspired by classic cinema and romantic European summer energy.</p>
+                <div class="event-line"></div>
+                <div class="event-meta-row"><div class="event-meta">Thu, Jul 16<br />7:30 PM<br />Lower Manhattan</div><div class="price">$24</div></div>
+                <span class="button">View Details</span>
+              </div>
             </summary>
             <div class="event-expanded">
               <p>Guests will gather for a screening of Roman Holiday followed by intermission cocktails and post-film conversation. Attendees are encouraged (but not required) to dress with inspiration from the film’s era and atmosphere.</p>
@@ -1041,14 +1253,20 @@
 
           <details class="event-card">
             <summary>
-              <div class="event-number">5.</div>
-              <h2>The Correspondence Society</h2>
-              <h3>Letters Never Sent</h3>
-              <p>An evening built around anonymous letters, quiet reflection, and conversation.</p>
-              <div class="event-line"></div>
-              <div class="event-meta">Thu, Jul 23<br />7:30 PM<br />Lower Manhattan</div>
-              <div class="price">$20</div>
-              <span class="button">View Details</span>
+              <div class="event-image">
+                <span class="event-badge">Atelier</span>
+                <img src="images/event-correspondence-society.jpg" alt="Vintage stationery, wax seals, handwritten letters, and candlelight" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <div class="event-image-placeholder" style="display:none;">Add image:<br />images/event-correspondence-society.jpg<br /><br />Letters · wax seals · quiet reflection</div>
+              </div>
+              <div class="event-content">
+                <div class="event-kicker">5 · Writing + Reflection</div>
+                <h2>The Correspondence Society</h2>
+                <h3>Letters Never Sent</h3>
+                <p>An evening built around anonymous letters, quiet reflection, and the words we almost never say aloud.</p>
+                <div class="event-line"></div>
+                <div class="event-meta-row"><div class="event-meta">Thu, Jul 23<br />7:30 PM<br />Lower Manhattan</div><div class="price">$32</div></div>
+                <span class="button">View Details</span>
+              </div>
             </summary>
             <div class="event-expanded">
               <p>Guests will be invited to write a letter inspired by one of several prompts:</p>
@@ -1071,14 +1289,20 @@
 
           <details class="event-card">
             <summary>
-              <div class="event-number">6.</div>
-              <h2>Sidecar sessions: One Night in Bangkok</h2>
-              <h3>One night in Bangkok</h3>
-              <p>An evening inspired by Bangkok after dark- vibrant, atmospheric, and built around shared experience.</p>
-              <div class="event-line"></div>
-              <div class="event-meta">Thu, Jul 30<br />10:30 PM<br />Lower Manhattan</div>
-              <div class="price">$24</div>
-              <span class="button">View Details</span>
+              <div class="event-image">
+                <span class="event-badge">Session</span>
+                <img src="images/event-bangkok-after-dark.jpg" alt="A vibrant Bangkok-inspired night with tropical cocktails, warm light, and shared plates" onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';" />
+                <div class="event-image-placeholder" style="display:none;">Add image:<br />images/event-bangkok-after-dark.jpg<br /><br />Thai cocktails · warm light · shared plates</div>
+              </div>
+              <div class="event-content">
+                <div class="event-kicker">6 · Cocktails + Shared Plates</div>
+                <h2>Sidecar Sessions: One Night in Bangkok</h2>
+                <h3>One Night in Bangkok</h3>
+                <p>An evening inspired by Bangkok after dark — vibrant, atmospheric, and built around shared experience.</p>
+                <div class="event-line"></div>
+                <div class="event-meta-row"><div class="event-meta">Thu, Jul 30<br />10:30 PM<br />Lower Manhattan</div><div class="price">$24</div></div>
+                <span class="button">View Details</span>
+              </div>
             </summary>
             <div class="event-expanded">
                           <p>Guests gather for tropical cocktails, Thai shared plates, candlelit conversation, and an atmosphere designed to feel transportive rather than transactional.</p>
